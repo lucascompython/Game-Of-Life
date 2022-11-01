@@ -62,7 +62,7 @@ fn camera_move(
         move_direction.x += 1.0;
     }
 
-    let move_direaction = move_direction.normalize_or_zero();
+    let move_direction = move_direction.normalize_or_zero();
     let (mut transform, mut movement) = camera.iter_mut().next().expect("No transform on main camera");
 
     movement.plane_speed = (movement.plane_speed + move_direction).clamp(Vec3::new(-CAMERA_MOVE_SPEED, -CAMERA_MOVE_SPEED, -CAMERA_MOVE_SPEED),
